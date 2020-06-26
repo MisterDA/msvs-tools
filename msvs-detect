@@ -323,7 +323,7 @@ if [[ $@ != "" ]] ; then
       echo "$0: cannot specify MSVS_PREFERENCE and --all">&2
       exit 2
     else
-      MSVS_PREFERENCE="$@"
+      MSVS_PREFERENCE="$*"
     fi
   fi
 fi
