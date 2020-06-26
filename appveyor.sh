@@ -40,7 +40,7 @@ cat detected-cl
 if [[ -e env-cl ]] ; then
   test 'Ensure msvs-detect prefers the environment compiler'
   diff env-cl detected-cl
-  ! diff -q first-cl detected-cl &> /dev/null
+  diff -q first-cl detected-cl &> /dev/null && exit 1
 fi
 
 if [[ $TEST_MSVS_PROMOTE_PATH -eq 1 ]] ; then
