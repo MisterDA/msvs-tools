@@ -803,7 +803,7 @@ for i in $MSVS_PREFERENCE ; do
       SDKS=
       for j in "${!COMPILERS[@]}" ; do
         eval COMPILER="${COMPILERS[$j]}"
-        if [[ -n ${COMPILER["VC_VER"]}+x ]] ; then
+        if [[ -n ${COMPILER["VC_VER"]+x} ]] ; then
           if [[ $i = "${COMPILER[VC_VER]}" && -n ${CANDIDATES[$j]+x} ]] ; then
             unset CANDIDATES["$j"]
             SDKS="$j $SDKS"
